@@ -80,6 +80,9 @@ ConfigStorageService.getConfig().then((config: Configuration) => {
     // change campaign page
     if (config[Opt.CampaignCharactersFolders]) CampaignCharactersService.init();
 
+    // change my characters page
+    if (config[Opt.MyCharactersFolders]) PlayByPostService.init();
+
     // adds the Beyond Help plugin to tiny editors on page
     if (config[Opt.EditorButton] || config[Opt.FullscreenButton]) TinyMCEService.init();
 
