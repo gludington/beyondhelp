@@ -1,6 +1,6 @@
 {
     "name": "Beyond Help",
-    "version": "0.10.5",
+    "version": "0.11.0",
     "description": "Chrome extension with helpers to https://www.dndbeyond.com/.",
     "background": {
         "scripts": [
@@ -50,8 +50,7 @@
     },
     "incognito": "split",
     "options_ui": {
-        "page": "optionspage.html",
-        "chrome_style": true
+        "page": "optionspage.html"
     },
     "permissions": [
         "activeTab",
