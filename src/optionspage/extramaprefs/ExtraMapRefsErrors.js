@@ -2,6 +2,7 @@ import ExtraMapRefsPatterns from "./ExtraMapRefsPatterns";
 
 
 const attToRequiredTitle = {
+    name: "Bundle Name",
     compendiums: "Compendiums",
     path: "Path",
     maps: "Map",
@@ -13,11 +14,12 @@ const attToRequiredTitle = {
     contentId: "Content Id",
     menuHeaderId: "Menu Element Id",
     isChapterMap: "Chapter Map on TOC",
-    tocHeaderId: "Toc Link Element Id",
+    tocHeaderId: "Toc Link Id",
     tocHeaderSelector: "Toc Link CSS Selector",
     coords: "Coords",
     headerId: "Header Id",
-    targetImageName: "Target Image"
+    targetImageName: "Target Image",
+    selector: "Header Selector"
 };
 
 const patternToMsg = {
@@ -46,6 +48,9 @@ function transformErrors(errors) {
         if (error.name === "pattern") {
             const msg = patternToMsg[error.params.pattern];
             error.message = msg || "Invalid format.";
+        }
+        if (error.name === "maxLength") {
+            error.message = "Bundle name is too long.";
         }
         return error;
     });
